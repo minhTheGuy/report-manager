@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80F38371-7F74-448F-995B-BA2D24C7FCFA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ArticleManagementApp</RootNamespace>
+    <AssemblyName>ArticleManagementApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.1.0\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.CodeDom, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.8.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\BUS_GiangVien.cs" />
+    <Compile Include="BUS\BUS_KiemDuyet.cs" />
+    <Compile Include="BUS\BUS_Login.cs" />
+    <Compile Include="DAO\DAOGiangVien.cs" />
+    <Compile Include="DAO\DAOKiemDuyet.cs" />
+    <Compile Include="DAO\DAOLogin.cs" />
+    <Compile Include="DAO\DAOProvider.cs" />
+    <Compile Include="DAO\DAOReport.cs" />
+    <Compile Include="DTO\Models.cs" />
+    <Compile Include="GUI\Components\AccountInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Components\AccountInfo.Designer.cs">
+      <DependentUpon>AccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\GiangVienAddReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\GiangVienAddReportControl.Designer.cs">
+      <DependentUpon>GiangVienAddReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\GiangVienHomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\GiangVienHomeControl.Designer.cs">
+      <DependentUpon>GiangVienHomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\GiangVienReportDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\GiangVienReportDetailControl.Designer.cs">
+      <DependentUpon>GiangVienReportDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Components\SearchBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Components\SearchBar.Designer.cs">
+      <DependentUpon>SearchBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\StoredReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\StoredReportControl.Designer.cs">
+      <DependentUpon>StoredReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Components\ReportList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Components\ReportList.Designer.cs">
+      <DependentUpon>ReportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiamSat\GiamSatContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiamSat\GiamSatContainer.Designer.cs">
+      <DependentUpon>GiamSatContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KiemDuyet\Controls\KiemDuyetReportDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\KiemDuyet\Controls\KiemDuyetReportDetailControl.Designer.cs">
+      <DependentUpon>KiemDuyetReportDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KiemDuyet\Controls\KiemDuyetHomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\KiemDuyet\Controls\KiemDuyetHomeControl.Designer.cs">
+      <DependentUpon>KiemDuyetHomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KiemDuyet\Controls\KiemDuyetReportDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\KiemDuyet\Controls\KiemDuyetReportDashboard.Designer.cs">
+      <DependentUpon>KiemDuyetReportDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KiemDuyet\KiemDuyetContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\KiemDuyet\KiemDuyetContainer.Designer.cs">
+      <DependentUpon>KiemDuyetContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiangVien\GiangVienContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiangVien\GiangVienContainer.Designer.cs">
+      <DependentUpon>GiangVienContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiangVien\AccountSession.cs" />
+    <Compile Include="GUI\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Components\AccountInfo.resx">
+      <DependentUpon>AccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiangVien\Controls\GiangVienAddReportControl.resx">
+      <DependentUpon>GiangVienAddReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiangVien\Controls\GiangVienHomeControl.resx">
+      <DependentUpon>GiangVienHomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiangVien\Controls\GiangVienReportDetailControl.resx">
+      <DependentUpon>GiangVienReportDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Components\SearchBar.resx">
+      <DependentUpon>SearchBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiangVien\Controls\StoredReportControl.resx">
+      <DependentUpon>StoredReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Components\ReportList.resx">
+      <DependentUpon>ReportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiamSat\GiamSatContainer.resx">
+      <DependentUpon>GiamSatContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KiemDuyet\Controls\KiemDuyetReportDetailControl.resx">
+      <DependentUpon>KiemDuyetReportDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KiemDuyet\Controls\KiemDuyetHomeControl.resx">
+      <DependentUpon>KiemDuyetHomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KiemDuyet\Controls\KiemDuyetReportDashboard.resx">
+      <DependentUpon>KiemDuyetReportDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\KiemDuyet\KiemDuyetContainer.resx">
+      <DependentUpon>KiemDuyetContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiangVien\GiangVienContainer.resx">
+      <DependentUpon>GiangVienContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\app_logo.png" />
+    <Content Include="Resources\Bell.png" />
+    <Content Include="Resources\bell_icon.png" />
+    <Content Include="Resources\bot_icon.png" />
+    <None Include="Resources\cancel_report_icon.png" />
+    <None Include="Resources\curve_rectangle.png" />
+    <Content Include="Resources\door_in_icon.png" />
+    <None Include="Resources\email_icon.png" />
+    <Content Include="Resources\example_avatar.png" />
+    <None Include="Resources\female_avatar_picture.png" />
+    <Content Include="Resources\google.png" />
+    <Content Include="Resources\group_logo.png" />
+    <Content Include="Resources\group_logo_v2.png" />
+    <None Include="Resources\group_people_icon.png" />
+    <Content Include="Resources\house_icon.png" />
+    <Content Include="Resources\info_icon.png" />
+    <Content Include="Resources\pattern-c.png" />
+    <None Include="Resources\phone_icon.png" />
+    <None Include="Resources\printer_icon.png" />
+    <Content Include="Resources\report_icon.png" />
+    <Content Include="Resources\report_processed_icon.png" />
+    <Content Include="Resources\report_processing_icon.png" />
+    <Content Include="Resources\report_save_icon.png" />
+    <Content Include="Resources\Search.png" />
+    <None Include="Resources\submit_report_icon.png" />
+    <None Include="Resources\submitted_report_icon.png" />
+    <None Include="Resources\search_btn.png" />
+    <Content Include="Resources\thembaibao_icon.png" />
+    <None Include="Resources\Transactions.png" />
+    <Content Include="Resources\Vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\GiamSat\Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
