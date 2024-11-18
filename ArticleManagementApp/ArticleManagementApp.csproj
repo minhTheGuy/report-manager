@@ -69,9 +69,11 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUS_GiamSat.cs" />
     <Compile Include="BUS\BUS_GiangVien.cs" />
     <Compile Include="BUS\BUS_KiemDuyet.cs" />
     <Compile Include="BUS\BUS_Login.cs" />
+    <Compile Include="DAO\DAOGiamSat.cs" />
     <Compile Include="DAO\DAOGiangVien.cs" />
     <Compile Include="DAO\DAOKiemDuyet.cs" />
     <Compile Include="DAO\DAOLogin.cs" />
@@ -83,6 +85,48 @@
     </Compile>
     <Compile Include="GUI\Components\AccountInfo.Designer.cs">
       <DependentUpon>AccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiamSatAccountInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiamSatAccountInfo.Designer.cs">
+      <DependentUpon>GiamSatAccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiamSatDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiamSatDashboard.Designer.cs">
+      <DependentUpon>GiamSatDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiamSatHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiamSatHome.Designer.cs">
+      <DependentUpon>GiamSatHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiamSatSearchBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiamSatSearchBar.Designer.cs">
+      <DependentUpon>GiamSatSearchBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\TimeDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\TimeDashboard.Designer.cs">
+      <DependentUpon>TimeDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\ReportDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\ReportDashboard.Designer.cs">
+      <DependentUpon>ReportDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiangVienList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiamSat\Controls\GiangVienList.Designer.cs">
+      <DependentUpon>GiangVienList.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GiangVien\Controls\GiangVienAddReportControl.cs">
       <SubType>UserControl</SubType>
@@ -168,6 +212,27 @@
     <EmbeddedResource Include="GUI\Components\AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiamSat\Controls\GiamSatAccountInfo.resx">
+      <DependentUpon>GiamSatAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiamSat\Controls\GiamSatDashboard.resx">
+      <DependentUpon>GiamSatDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiamSat\Controls\GiamSatHome.resx">
+      <DependentUpon>GiamSatHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiamSat\Controls\GiamSatSearchBar.resx">
+      <DependentUpon>GiamSatSearchBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiamSat\Controls\TimeDashboard.resx">
+      <DependentUpon>TimeDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiamSat\Controls\ReportDashboard.resx">
+      <DependentUpon>ReportDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiamSat\Controls\GiangVienList.resx">
+      <DependentUpon>GiangVienList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiangVien\Controls\GiangVienAddReportControl.resx">
       <DependentUpon>GiangVienAddReportControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,18 +301,34 @@
     <Content Include="Resources\Bell.png" />
     <Content Include="Resources\bell_icon.png" />
     <Content Include="Resources\bot_icon.png" />
+    <None Include="Resources\Vector1.png" />
     <None Include="Resources\cancel_report_icon.png" />
     <None Include="Resources\curve_rectangle.png" />
+    <None Include="Resources\clock.png" />
     <Content Include="Resources\door_in_icon.png" />
     <None Include="Resources\email_icon.png" />
     <Content Include="Resources\example_avatar.png" />
     <None Include="Resources\female_avatar_picture.png" />
+    <None Include="Resources\giam_sat_microscope_icon.png" />
+    <None Include="Resources\giam_sat_avatar.png" />
+    <None Include="Resources\giam_sat_total_person_icon.png" />
+    <None Include="Resources\giam_sat_house.png" />
+    <None Include="Resources\giam_sat_house1.png" />
+    <None Include="Resources\giam_sat_people_icon.png" />
+    <None Include="Resources\giam_sat_bar_chart.png" />
+    <None Include="Resources\giam_sat_clock.png" />
+    <None Include="Resources\giam_sat_profile_icon.png" />
+    <None Include="Resources\giam_sat_logout_icon.png" />
+    <None Include="Resources\giam_sat_avatar1.png" />
     <Content Include="Resources\google.png" />
+    <None Include="Resources\Group 10 %281%29.png" />
+    <None Include="Resources\Group 1000004114.png" />
     <Content Include="Resources\group_logo.png" />
     <Content Include="Resources\group_logo_v2.png" />
     <None Include="Resources\group_people_icon.png" />
     <Content Include="Resources\house_icon.png" />
     <Content Include="Resources\info_icon.png" />
+    <None Include="Resources\male_avatar_pic.png" />
     <Content Include="Resources\pattern-c.png" />
     <None Include="Resources\phone_icon.png" />
     <None Include="Resources\printer_icon.png" />
@@ -261,10 +342,10 @@
     <None Include="Resources\search_btn.png" />
     <Content Include="Resources\thembaibao_icon.png" />
     <None Include="Resources\Transactions.png" />
+    <None Include="Resources\union-1.png" />
+    <None Include="Resources\union-1 %281%29.png" />
     <Content Include="Resources\Vector.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\GiamSat\Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -35,15 +35,15 @@ namespace ArticleManagementApp.GUI
                         GiangVienContainer gvHome = new("home");
                         gvHome.ShowDialog();
                         break;
-                    case 3:
+                    case 2:
                         BUS_KiemDuyet.Instance.SetKiemDuyetSession(email);
                         KiemDuyetContainer kdHome = new("home");
                         kdHome.ShowDialog();
                         break;
-                    case 2:
+                    case 3:
                         // TODO: implement this
-                        BUS_KiemDuyet.Instance.SetKiemDuyetSession(email);
-                        GiamSatContainer gsHome = new();
+                        BUS_GiamSat.Instance.SetGiamSatSession(email);
+                        GiamSatContainer gsHome = new("home");
                         gsHome.ShowDialog();
                         break;
                 }

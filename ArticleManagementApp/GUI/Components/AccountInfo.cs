@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ArticleManagementApp.BUS;
+using ArticleManagementApp.DAO;
 using ArticleManagementApp.DTO;
+using ArticleManagementApp.GUI.GiamSat.Controls;
 using Guna.UI2.WinForms;
 
 namespace ArticleManagementApp.GUI.GiangVien.Controls
@@ -16,23 +18,46 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
     public partial class AccountInfo : UserControl
     {
         private SearchBar searchBar;
-
-        public AccountInfo()
+        private int id;
+        public AccountInfo(string type, int id = 0)
         {
             InitializeComponent();
 
-            searchBar = new SearchBar();
-            searchBar.Search += Do_Search;
-            searchBar.Dock = DockStyle.Fill;
-            searchBarContainer.Controls.Add(searchBar);
+            if (type.Equals("giangVien") || type.Equals("kiemDuyet"))
+            {
+                searchBar = new SearchBar();
+                searchBar.Dock = DockStyle.Top;
+                searchBar.Search += Do_Search;
+                searchBarContainer.Controls.Add(searchBar);
+            }
+            else
+            {
+                GiamSatSearchBar giamSatSearchBar = new GiamSatSearchBar();
+                giamSatSearchBar.Dock = DockStyle.Top;
+                searchBarContainer.Controls.Add(giamSatSearchBar);
+            }
 
             guna2Transition1.Hide(reportSearchList);
+            this.id = id;
             LoadAccountInfo();
         }
 
         private void LoadAccountInfo()
         {
-            DataRow dt = BUS_GiangVien.Instance.GetGiangVienInfoByEmail(AccountSession.Email);
+            DataRow dt;
+            if (id == 0)
+            {
+                dt = BUS_GiangVien.Instance.GetGiangVienInfoByEmail(AccountSession.Email);
+                txtName.Text = dt["name"].ToString();
+                txtEmail.Text = dt["email"].ToString();
+                txtDegree.Text = dt["hocvi"].ToString();
+                txtFaculty.Text = dt["khoa"].ToString();
+                txtPhoneNumber.Text = dt["PhoneNumber"].ToString();
+                return;
+            }
+            dt = BUS_GiangVien.Instance.GetGiangVienInfoById(id);
+            lblName.Text = dt["name"].ToString();
+            lblTitle.Text = dt["hocvi"].ToString();
             txtName.Text = dt["name"].ToString();
             txtEmail.Text = dt["email"].ToString();
             txtDegree.Text = dt["hocvi"].ToString();

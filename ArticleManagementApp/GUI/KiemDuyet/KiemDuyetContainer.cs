@@ -87,7 +87,7 @@ namespace ArticleManagementApp.GUI
             guna2Transition1.HideSync(dropdownContainer);
 
             controlContainer.Controls.Clear();
-            AccountInfo accountInfo = new AccountInfo();
+            AccountInfo accountInfo = new AccountInfo("kiemDuyet");
             accountInfo.Dock = DockStyle.Fill;
             controlContainer.Controls.Add(accountInfo);
         }

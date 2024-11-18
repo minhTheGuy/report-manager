@@ -20,6 +20,11 @@ namespace ArticleManagementApp.DAO
 
         private DAOGiangVien() { }
 
+        public DataRow GetGiangVienInfoById(int id)
+        {
+            return DAOProvider.Instance.ExecuteQuery("exec sp_GetGiangVienInfoById @id", new object[] { id }).Rows[0];
+
+        }
         public DataRow GetGiangVienInfoByEmail(string email)
         {
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetGiangVienInfoByEmail @email", new object[] { email }).Rows[0];

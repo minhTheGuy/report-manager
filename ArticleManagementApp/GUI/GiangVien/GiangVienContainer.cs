@@ -43,7 +43,7 @@ namespace ArticleManagementApp.GUI
                     break;
                 case "account":
                     btnInfo.Checked = true;
-                    giangVienHomeContainter.Controls.Add(new AccountInfo());
+                    giangVienHomeContainter.Controls.Add(new AccountInfo("giangVien"));
                     break;
                 default:
                     break;
@@ -89,7 +89,17 @@ namespace ArticleManagementApp.GUI
         private void Go_AccountInfo(object sender, EventArgs e)
         {
             giangVienHomeContainter.Controls.Clear();
-            giangVienHomeContainter.Controls.Add(new AccountInfo());
+            giangVienHomeContainter.Controls.Add(new AccountInfo("giangVien"));
+        }
+
+        private void GiangVienContainer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

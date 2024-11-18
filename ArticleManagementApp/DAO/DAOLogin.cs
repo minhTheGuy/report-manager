@@ -22,6 +22,11 @@ namespace ArticleManagementApp.DAO
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetAccountRoleByEmail @Email", new object[] { email }).Rows[0];
         }
 
+        public DataRow GetAccountById(int id)
+        {
+            return DAOProvider.Instance.ExecuteQuery("exec sp_GetAccountById @id", new object[] { id }).Rows[0];
+        }
+
         public DataTable ValidateLogin(string username, string password)
         {
             return DAOProvider.Instance.ExecuteQuery("exec sp_CheckLogin @email , @password", new object[] { username, password });

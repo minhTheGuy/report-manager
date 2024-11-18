@@ -140,7 +140,7 @@ namespace ArticleManagementApp.GUI.KiemDuyet.Controls
             totalReportDoughnutChart.XAxes.Display = false;
             totalReportDoughnutChart.YAxes.Display = false;
 
-            var dataset = new Guna.Charts.WinForms.GunaPieDataset();
+            var dataset = new Guna.Charts.WinForms.GunaDoughnutDataset();
             //Create a new dataset 
             var r = new Random();
             int total = 0;

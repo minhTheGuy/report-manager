@@ -170,7 +170,7 @@
             this.txtNumPages.BorderRadius = 10;
             this.txtNumPages.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2Transition1.SetDecoration(this.txtNumPages, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.txtNumPages.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumPages.Font = new System.Drawing.Font("Inter", 11F);
             this.txtNumPages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtNumPages.Location = new System.Drawing.Point(15, 142);
             this.txtNumPages.Name = "txtNumPages";
@@ -189,16 +189,16 @@
             this.txtFilePath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtFilePath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtFilePath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilePath.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilePath.Font = new System.Drawing.Font("Inter", 11F);
             this.txtFilePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtFilePath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilePath.Location = new System.Drawing.Point(15, 456);
-            this.txtFilePath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFilePath.Location = new System.Drawing.Point(15, 459);
+            this.txtFilePath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PasswordChar = '\0';
             this.txtFilePath.PlaceholderText = "Nhập số phát hành";
             this.txtFilePath.SelectedText = "";
-            this.txtFilePath.Size = new System.Drawing.Size(555, 54);
+            this.txtFilePath.Size = new System.Drawing.Size(555, 51);
             this.txtFilePath.TabIndex = 11;
             // 
             // label15
@@ -226,13 +226,13 @@
             this.txtDOI.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDOI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtDOI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDOI.Location = new System.Drawing.Point(15, 351);
-            this.txtDOI.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDOI.Location = new System.Drawing.Point(17, 351);
+            this.txtDOI.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtDOI.Name = "txtDOI";
             this.txtDOI.PasswordChar = '\0';
             this.txtDOI.PlaceholderText = "Nhập DOI";
             this.txtDOI.SelectedText = "";
-            this.txtDOI.Size = new System.Drawing.Size(555, 54);
+            this.txtDOI.Size = new System.Drawing.Size(553, 54);
             this.txtDOI.TabIndex = 9;
             // 
             // label13
@@ -279,7 +279,7 @@
             this.txtPublishNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPublishNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPublishNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPublishNumber.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPublishNumber.Font = new System.Drawing.Font("Inter", 11F);
             this.txtPublishNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtPublishNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPublishNumber.Location = new System.Drawing.Point(15, 36);
@@ -334,7 +334,7 @@
             this.txtAuthors.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtAuthors.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtAuthors.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAuthors.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAuthors.Font = new System.Drawing.Font("Inter", 11F);
             this.txtAuthors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtAuthors.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAuthors.Location = new System.Drawing.Point(20, 351);
@@ -392,7 +392,7 @@
             this.txtLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtLink.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtLink.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLink.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLink.Font = new System.Drawing.Font("Inter", 11F);
             this.txtLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtLink.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLink.Location = new System.Drawing.Point(20, 456);
@@ -426,7 +426,7 @@
             this.txtMainAuthor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMainAuthor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMainAuthor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMainAuthor.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMainAuthor.Font = new System.Drawing.Font("Inter", 11F);
             this.txtMainAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtMainAuthor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMainAuthor.Location = new System.Drawing.Point(20, 246);
@@ -460,7 +460,7 @@
             this.txtOrigin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtOrigin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtOrigin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOrigin.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrigin.Font = new System.Drawing.Font("Inter", 11F);
             this.txtOrigin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtOrigin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOrigin.Location = new System.Drawing.Point(20, 141);
@@ -494,7 +494,7 @@
             this.txtReportName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtReportName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtReportName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReportName.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReportName.Font = new System.Drawing.Font("Inter", 11F);
             this.txtReportName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtReportName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReportName.Location = new System.Drawing.Point(20, 36);
@@ -521,10 +521,10 @@
             // 
             this.label5.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.label5, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label5.Font = new System.Drawing.Font("Inter Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(568, 71);
+            this.label5.Font = new System.Drawing.Font("Inter Medium", 25F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(521, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(217, 35);
+            this.label5.Size = new System.Drawing.Size(310, 49);
             this.label5.TabIndex = 18;
             this.label5.Text = "Thêm mới bài báo";
             // 
@@ -598,7 +598,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.reportSearchList.DefaultCellStyle = dataGridViewCellStyle4;
             this.reportSearchList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.reportSearchList.Location = new System.Drawing.Point(33, 65);
+            this.reportSearchList.Location = new System.Drawing.Point(33, 66);
             this.reportSearchList.Name = "reportSearchList";
             this.reportSearchList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -620,7 +620,7 @@
             this.reportSearchList.RowTemplate.Height = 100;
             this.reportSearchList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.reportSearchList.Size = new System.Drawing.Size(1104, 206);
-            this.reportSearchList.TabIndex = 24;
+            this.reportSearchList.TabIndex = 26;
             this.reportSearchList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.reportSearchList.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.reportSearchList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;

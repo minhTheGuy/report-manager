@@ -28,6 +28,11 @@ namespace ArticleManagementApp.BUS
             AccountSession.Email = email;
         }
 
+        public DataRow GetGiangVienInfoById(int id)
+        {
+            return DAOGiangVien.Instance.GetGiangVienInfoById(id);
+        }
+
         public DataRow GetGiangVienInfoByEmail(string email)
         {
             return DAOGiangVien.Instance.GetGiangVienInfoByEmail(email);

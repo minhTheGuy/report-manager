@@ -32,14 +32,15 @@ namespace ArticleManagementApp.GUI
         private void InitializeComponent()
         {
             this.giangVienHomeContainter = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.giangVienSideBar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -49,17 +50,16 @@ namespace ArticleManagementApp.GUI
             this.btnStoreReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnInfo = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.giangVienHomeContainter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.giangVienSideBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +71,16 @@ namespace ArticleManagementApp.GUI
             this.giangVienHomeContainter.Name = "giangVienHomeContainter";
             this.giangVienHomeContainter.Size = new System.Drawing.Size(1352, 861);
             this.giangVienHomeContainter.TabIndex = 12;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::ArticleManagementApp.Properties.Resources.bot_icon;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(1319, 797);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(53, 61);
+            this.guna2PictureBox2.TabIndex = 36;
+            this.guna2PictureBox2.TabStop = false;
             // 
             // giangVienSideBar
             // 
@@ -103,6 +113,15 @@ namespace ArticleManagementApp.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(199, 50);
             this.panel2.TabIndex = 35;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ArticleManagementApp.Properties.Resources.group_logo_v2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 47);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -158,15 +177,6 @@ namespace ArticleManagementApp.GUI
             this.label1.TabIndex = 10;
             this.label1.Text = "SECO Software";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ArticleManagementApp.Properties.Resources.group_logo_v2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 47);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ArticleManagementApp.Properties.Resources.app_logo;
@@ -187,7 +197,7 @@ namespace ArticleManagementApp.GUI
             this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnHome.FillColor = System.Drawing.Color.Transparent;
-            this.btnHome.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnHome.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = global::ArticleManagementApp.Properties.Resources.house_icon;
             this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -196,7 +206,7 @@ namespace ArticleManagementApp.GUI
             this.btnHome.Location = new System.Drawing.Point(3, 125);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(206, 40);
+            this.btnHome.Size = new System.Drawing.Size(226, 40);
             this.btnHome.TabIndex = 31;
             this.btnHome.Text = "Trang chủ";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -213,7 +223,7 @@ namespace ArticleManagementApp.GUI
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdd.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = global::ArticleManagementApp.Properties.Resources.thembaibao_icon;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -221,7 +231,7 @@ namespace ArticleManagementApp.GUI
             this.btnAdd.Location = new System.Drawing.Point(3, 198);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(206, 40);
+            this.btnAdd.Size = new System.Drawing.Size(226, 40);
             this.btnAdd.TabIndex = 32;
             this.btnAdd.Text = "Thêm bài báo";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -238,7 +248,7 @@ namespace ArticleManagementApp.GUI
             this.btnSubmittedReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSubmittedReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSubmittedReport.FillColor = System.Drawing.Color.Transparent;
-            this.btnSubmittedReport.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSubmittedReport.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
             this.btnSubmittedReport.ForeColor = System.Drawing.Color.White;
             this.btnSubmittedReport.Image = global::ArticleManagementApp.Properties.Resources.report_icon;
             this.btnSubmittedReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -246,7 +256,7 @@ namespace ArticleManagementApp.GUI
             this.btnSubmittedReport.Location = new System.Drawing.Point(3, 271);
             this.btnSubmittedReport.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btnSubmittedReport.Name = "btnSubmittedReport";
-            this.btnSubmittedReport.Size = new System.Drawing.Size(206, 40);
+            this.btnSubmittedReport.Size = new System.Drawing.Size(226, 40);
             this.btnSubmittedReport.TabIndex = 33;
             this.btnSubmittedReport.Text = "Danh sách đơn đã nộp";
             this.btnSubmittedReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -263,7 +273,7 @@ namespace ArticleManagementApp.GUI
             this.btnProcessingReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnProcessingReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnProcessingReport.FillColor = System.Drawing.Color.Transparent;
-            this.btnProcessingReport.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnProcessingReport.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
             this.btnProcessingReport.ForeColor = System.Drawing.Color.White;
             this.btnProcessingReport.Image = global::ArticleManagementApp.Properties.Resources.report_processing_icon;
             this.btnProcessingReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -271,7 +281,7 @@ namespace ArticleManagementApp.GUI
             this.btnProcessingReport.Location = new System.Drawing.Point(3, 344);
             this.btnProcessingReport.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btnProcessingReport.Name = "btnProcessingReport";
-            this.btnProcessingReport.Size = new System.Drawing.Size(206, 40);
+            this.btnProcessingReport.Size = new System.Drawing.Size(226, 40);
             this.btnProcessingReport.TabIndex = 35;
             this.btnProcessingReport.Text = "Danh sách đơn đang xử lý";
             this.btnProcessingReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -288,7 +298,7 @@ namespace ArticleManagementApp.GUI
             this.btnProcessedReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnProcessedReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnProcessedReport.FillColor = System.Drawing.Color.Transparent;
-            this.btnProcessedReport.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnProcessedReport.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
             this.btnProcessedReport.ForeColor = System.Drawing.Color.White;
             this.btnProcessedReport.Image = global::ArticleManagementApp.Properties.Resources.report_processed_icon;
             this.btnProcessedReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -296,7 +306,7 @@ namespace ArticleManagementApp.GUI
             this.btnProcessedReport.Location = new System.Drawing.Point(3, 417);
             this.btnProcessedReport.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btnProcessedReport.Name = "btnProcessedReport";
-            this.btnProcessedReport.Size = new System.Drawing.Size(206, 40);
+            this.btnProcessedReport.Size = new System.Drawing.Size(226, 40);
             this.btnProcessedReport.TabIndex = 36;
             this.btnProcessedReport.Text = "Danh sách đơn đã xử lý";
             this.btnProcessedReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -313,7 +323,7 @@ namespace ArticleManagementApp.GUI
             this.btnStoreReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnStoreReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnStoreReport.FillColor = System.Drawing.Color.Transparent;
-            this.btnStoreReport.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnStoreReport.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
             this.btnStoreReport.ForeColor = System.Drawing.Color.White;
             this.btnStoreReport.Image = global::ArticleManagementApp.Properties.Resources.report_save_icon;
             this.btnStoreReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -321,7 +331,7 @@ namespace ArticleManagementApp.GUI
             this.btnStoreReport.Location = new System.Drawing.Point(3, 490);
             this.btnStoreReport.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btnStoreReport.Name = "btnStoreReport";
-            this.btnStoreReport.Size = new System.Drawing.Size(206, 40);
+            this.btnStoreReport.Size = new System.Drawing.Size(226, 40);
             this.btnStoreReport.TabIndex = 37;
             this.btnStoreReport.Text = "Lưu trữ";
             this.btnStoreReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -338,7 +348,7 @@ namespace ArticleManagementApp.GUI
             this.btnInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnInfo.FillColor = System.Drawing.Color.Transparent;
-            this.btnInfo.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnInfo.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
             this.btnInfo.ForeColor = System.Drawing.Color.White;
             this.btnInfo.Image = global::ArticleManagementApp.Properties.Resources.info_icon;
             this.btnInfo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -346,7 +356,7 @@ namespace ArticleManagementApp.GUI
             this.btnInfo.Location = new System.Drawing.Point(3, 563);
             this.btnInfo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(206, 40);
+            this.btnInfo.Size = new System.Drawing.Size(226, 40);
             this.btnInfo.TabIndex = 38;
             this.btnInfo.Text = "Thông tin tài khoản";
             this.btnInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -363,7 +373,7 @@ namespace ArticleManagementApp.GUI
             this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogout.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogout.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = global::ArticleManagementApp.Properties.Resources.door_in_icon;
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -371,21 +381,12 @@ namespace ArticleManagementApp.GUI
             this.btnLogout.Location = new System.Drawing.Point(3, 636);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 3, 3, 60);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(206, 40);
+            this.btnLogout.Size = new System.Drawing.Size(226, 40);
             this.btnLogout.TabIndex = 39;
             this.btnLogout.Text = " Đăng xuất";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::ArticleManagementApp.Properties.Resources.bot_icon;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(1319, 797);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(53, 61);
-            this.guna2PictureBox2.TabIndex = 36;
-            this.guna2PictureBox2.TabStop = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // guna2PictureBox1
             // 
@@ -409,19 +410,20 @@ namespace ArticleManagementApp.GUI
             this.Name = "GiangVienContainer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GiangVienHome";
+            this.Load += new System.EventHandler(this.GiangVienContainer_Load);
             this.giangVienHomeContainter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.giangVienSideBar.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
