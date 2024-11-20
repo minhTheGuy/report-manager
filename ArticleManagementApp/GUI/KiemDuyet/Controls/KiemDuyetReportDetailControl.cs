@@ -61,7 +61,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         private void Do_Search(object sender, EventArgs e)
         {
 
-            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsByEmail(AccountSession.Email);
+            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsById(AccountSession.Id);
             List<Models.BaiBao> filteredBaiBaos = new List<Models.BaiBao>();
 
             foreach (Models.BaiBao baiBao in baiBaos)
@@ -96,7 +96,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
                     image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
                 }
 
-                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.NgayNop, baiBao.NgayXuLy, image);
+                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
             }
 
             guna2Transition1.ShowSync(reportSearchList);

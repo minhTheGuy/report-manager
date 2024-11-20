@@ -1,6 +1,6 @@
 ﻿namespace ArticleManagementApp.GUI.GiangVien.Controls
 {
-    partial class ReportList
+    partial class GiangVienReportList
     {
         /// <summary> 
         /// Required designer variable.
@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiangVienReportList));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,10 +46,9 @@
             this.reportGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenBaiBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noiDangBai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayXuLy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewImageColumn();
+            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThaoTac = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblReportList = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -103,10 +102,9 @@
             this.reportGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.TenBaiBao,
-            this.NgayNop,
-            this.noiDangBai,
-            this.NgayXuLy,
-            this.TrangThai,
+            this.location,
+            this.Status,
+            this.Note,
             this.ThaoTac});
             this.guna2Transition1.SetDecoration(this.reportGridView, Guna.UI2.AnimatorNS.DecorationType.None);
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -163,6 +161,7 @@
             this.reportGridView.ThemeStyle.RowsStyle.Height = 100;
             this.reportGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.reportGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.reportGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Go_ShowReportDetail);
             // 
             // ID
             // 
@@ -182,31 +181,25 @@
             this.TenBaiBao.Name = "TenBaiBao";
             this.TenBaiBao.ReadOnly = true;
             // 
-            // NgayNop
+            // location
             // 
-            this.NgayNop.DataPropertyName = "NgayNop";
-            this.NgayNop.HeaderText = "Ngày nộp";
-            this.NgayNop.Name = "NgayNop";
-            this.NgayNop.ReadOnly = true;
+            this.location.DataPropertyName = "location";
+            this.location.HeaderText = "Nơi Đăng Bài";
+            this.location.Name = "location";
             // 
-            // noiDangBai
+            // Status
             // 
-            this.noiDangBai.HeaderText = "Nơi Đăng Bài";
-            this.noiDangBai.Name = "noiDangBai";
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Trạng thái";
+            this.Status.Name = "Status";
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // NgayXuLy
+            // Note
             // 
-            this.NgayXuLy.DataPropertyName = "NgayXuLy";
-            this.NgayXuLy.HeaderText = "Ngày xử lý";
-            this.NgayXuLy.Name = "NgayXuLy";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Note.DataPropertyName = "Note";
+            this.Note.HeaderText = "Ghi Chú";
+            this.Note.Name = "Note";
             // 
             // ThaoTac
             // 
@@ -416,7 +409,7 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 184;
             // 
-            // ReportList
+            // GiangVienReportList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -427,7 +420,7 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.lblReportList);
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.Name = "ReportList";
+            this.Name = "GiangVienReportList";
             this.Size = new System.Drawing.Size(1375, 861);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.reportGridView)).EndInit();
@@ -446,20 +439,19 @@
         private Guna.UI2.WinForms.Guna2Panel searchBarContainer;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private Guna.UI2.WinForms.Guna2DataGridView reportSearchList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private Guna.UI2.WinForms.Guna2DataGridView reportGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenBaiBao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noiDangBai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayXuLy;
-        private System.Windows.Forms.DataGridViewImageColumn TrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn location;
+        private System.Windows.Forms.DataGridViewImageColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.DataGridViewImageColumn ThaoTac;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private Guna.UI2.WinForms.Guna2DataGridView reportSearchList;
     }
 }

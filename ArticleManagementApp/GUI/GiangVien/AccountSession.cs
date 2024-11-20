@@ -8,7 +8,7 @@ namespace ArticleManagementApp.GUI
 {
     internal class AccountSession
     {
-        public static int Id { get; set; }
+        public static string Id { get; set; }
         public static string Email { get; set; }
         public static string Role { get; set; } = "Giảng viên";
         public static string Faculty { get; set; } = "CNTT";

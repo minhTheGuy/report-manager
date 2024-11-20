@@ -18,8 +18,8 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
     public partial class GiamSatAccountInfo : UserControl
     {
         private SearchBar searchBar;
-        private int id;
-        public GiamSatAccountInfo(string type, int id = 0)
+        private string id;
+        public GiamSatAccountInfo(string type, string id = "")
         {
             InitializeComponent();
 
@@ -45,9 +45,9 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         private void LoadAccountInfo()
         {
             DataRow dt;
-            if (id == 0)
+            if (id == "")
             {
-                dt = BUS_GiangVien.Instance.GetGiangVienInfoByEmail(AccountSession.Email);
+                dt = BUS_GiangVien.Instance.GetGiangVienInfoById(AccountSession.Id);
                 lblName.Text = dt["name"].ToString();
                 lblTitle.Text = dt["hocvi"].ToString();
                 txtName.Text = dt["name"].ToString();
@@ -58,11 +58,11 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
                 return;
             }
             dt = BUS_GiangVien.Instance.GetGiangVienInfoById(id);
-            // if id is even, change avatar
-            if (id % 2 == 0)
-            {
-                avatar.Image = Properties.Resources.example_avatar;
-            }
+            //// if id is even, change avatar
+            //if (id % 2 == 0)
+            //{
+            //    avatar.Image = Properties.Resources.example_avatar;
+            //}
             lblName.Text = dt["name"].ToString();
             lblTitle.Text = dt["hocvi"].ToString();
             txtName.Text = dt["name"].ToString();
@@ -75,7 +75,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         private void Do_Search(object sender, EventArgs e)
         {
 
-            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsByEmail(AccountSession.Email);
+            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsById(AccountSession.Id);
             List<Models.BaiBao> filteredBaiBaos = new List<Models.BaiBao>();
 
             foreach (Models.BaiBao baiBao in baiBaos)
@@ -110,7 +110,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
                     image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
                 }
 
-                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.NgayNop, baiBao.NgayXuLy, image);
+                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
             }
 
             guna2Transition1.ShowSync(reportSearchList);

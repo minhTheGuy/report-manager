@@ -35,5 +35,10 @@ namespace ArticleManagementApp.DAO
         {
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetReportDashboardByFaculty");
         }
+
+        public DataTable GetSubmittedReports()
+        {
+            return DAOProvider.Instance.ExecuteQuery("exec sp_GetSubmittedReports");
+        }
     }
 }

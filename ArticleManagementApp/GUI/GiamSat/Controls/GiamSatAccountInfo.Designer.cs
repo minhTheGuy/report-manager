@@ -46,8 +46,6 @@
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -219,40 +217,6 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(1250, 2);
             this.label9.TabIndex = 40;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BorderRadius = 8;
-            this.guna2Transition1.SetDecoration(this.guna2Button2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(107)))), ((int)(((byte)(226)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(1068, 203);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(172, 55);
-            this.guna2Button2.TabIndex = 39;
-            this.guna2Button2.Text = "Cập nhật thông tin";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 8;
-            this.guna2Transition1.SetDecoration(this.guna2Button1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(77)))), ((int)(((byte)(108)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(842, 203);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(172, 55);
-            this.guna2Button1.TabIndex = 38;
-            this.guna2Button1.Text = "Đổi ảnh đại diện";
             // 
             // lblTitle
             // 
@@ -447,7 +411,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.reportSearchList.DefaultCellStyle = dataGridViewCellStyle4;
             this.reportSearchList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.reportSearchList.Location = new System.Drawing.Point(65, 125);
+            this.reportSearchList.Location = new System.Drawing.Point(69, 125);
             this.reportSearchList.Name = "reportSearchList";
             this.reportSearchList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -469,7 +433,7 @@
             this.reportSearchList.RowTemplate.Height = 100;
             this.reportSearchList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.reportSearchList.Size = new System.Drawing.Size(1127, 206);
-            this.reportSearchList.TabIndex = 60;
+            this.reportSearchList.TabIndex = 61;
             this.reportSearchList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.reportSearchList.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.reportSearchList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -491,6 +455,7 @@
             this.reportSearchList.ThemeStyle.RowsStyle.Height = 100;
             this.reportSearchList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.reportSearchList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.reportSearchList.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -558,8 +523,6 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.avatar);
@@ -587,8 +550,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblName;
         private Guna.UI2.WinForms.Guna2CirclePictureBox avatar;

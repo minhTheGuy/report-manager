@@ -28,9 +28,12 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
 
         private void LoadGiangVienInfo()
         {
-            DataRow dt = BUS_GiangVien.Instance.GetGiangVienInfoByEmail(AccountSession.Email);
-            label3.Text = dt["name"].ToString();
-            label4.Text = dt["hocvi"].ToString();
+            DataRow dt = BUS_GiangVien.Instance.GetGiangVienInfoById(AccountSession.Id);
+            label3.Text = dt["HoTenGV"].ToString();
+            label4.Text = dt["HocVi"].ToString();
+            pictureBox4.Image = Image.FromStream(new System.IO.MemoryStream((byte[])dt["ADD"]));
+            // scale image
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
 
         }
 

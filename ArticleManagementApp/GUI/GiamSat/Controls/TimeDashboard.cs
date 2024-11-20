@@ -43,7 +43,7 @@ namespace ArticleManagementApp.GUI.GiamSat.Controls
             if (e.RowIndex != e.RowIndex - 1 && e.ColumnIndex == 0)
             {
                 // get id of selected row
-                int id = int.Parse(listGiangVien.Rows[e.RowIndex].Cells[1].Value.ToString());
+                string id = listGiangVien.Rows[e.RowIndex].Cells[1].Value.ToString();
                 this.Controls.Clear();
                 this.Controls.Add(new GiamSatAccountInfo("giamSat", id));
             }

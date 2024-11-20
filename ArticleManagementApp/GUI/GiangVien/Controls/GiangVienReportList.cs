@@ -12,10 +12,10 @@ using ArticleManagementApp.DTO;
 
 namespace ArticleManagementApp.GUI.GiangVien.Controls
 {
-    public partial class ReportList : UserControl
+    public partial class GiangVienReportList : UserControl
     {
         private SearchBar searchBar;
-        public ReportList(string status, string role)
+        public GiangVienReportList(string status)
         {
             InitializeComponent();
 
@@ -23,7 +23,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
             searchBar.Search += Do_Search;
             searchBarContainer.Controls.Add(searchBar);
 
-            switch (status)
+            switch (status.ToLower())
             {
                 case "submitted":
                     lblReportList.Text = "Bài báo đã nộp";
@@ -43,74 +43,42 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
             }
 
             guna2Transition1.Hide(reportSearchList);
-            if (role.Equals("giangVien"))
-            {
-                Load_ReportList(status);
-            }
-            else
-            {
-                Load_ReportList(status, "kiemDuyet");
-            }
+            Load_ReportList(status);
+
         }
 
-        private void Load_ReportList(string status, string role = null)
+        private void Load_ReportList(string status)
         {
-            if (role == null)
+            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsById(AccountSession.Id);
+
+            foreach (Models.BaiBao baiBao in baiBaos)
             {
-                List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsById(AccountSession.Id);
-
-                foreach (Models.BaiBao baiBao in baiBaos)
+                if (!baiBao.TrangThai.ToLower().Equals(status))
                 {
-                    if (!baiBao.TrangThai.Equals(status))
-                    {
-                        continue;
-                    }
-
-                    Image image = null;
-                    if (baiBao.TrangThai.Equals("published"))
-                    {
-                        image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
-                    }
-                    else if (baiBao.TrangThai.Equals("need re-check") || baiBao.TrangThai.Equals("pending"))
-                    {
-                        image = Image.FromFile(@"C:\Users\Admin\Downloads\warning_status.png");
-                    }
-                    else
-                    {
-                        image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
-                    }
-
-                    reportGridView.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
+                    continue;
                 }
+
+                Image image = null;
+                if (baiBao.TrangThai.Equals("published"))
+                {
+                    image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
+                }
+                else if (baiBao.TrangThai.Equals("need re-check") || baiBao.TrangThai.Equals("pending"))
+                {
+                    image = Image.FromFile(@"C:\Users\Admin\Downloads\warning_status.png");
+                }
+                else
+                {
+                    image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
+                }
+
+                reportGridView.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
             }
-            else
+
+            if (!status.Equals("published"))
             {
-                List<Models.BaiBao> baiBaos = BUS_KiemDuyet.Instance.GetSubmittedReports();
-                foreach (Models.BaiBao baiBao in baiBaos)
-                {
-                    if (!baiBao.TrangThai.Equals(status))
-                    {
-                        continue;
-                    }
-
-                    Image image = null;
-                    if (baiBao.TrangThai.Equals("published"))
-                    {
-                        image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
-                    }
-                    else if (baiBao.TrangThai.Equals("need re-check") || baiBao.TrangThai.Equals("pending"))
-                    {
-                        image = Image.FromFile(@"C:\Users\Admin\Downloads\warning_status.png");
-                    }
-                    else
-                    {
-                        image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
-                    }
-
-                    reportGridView.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
-                }
+                reportGridView.Columns["Status"].Visible = false;
             }
-            
         }
 
         private void Do_Search(object sender, EventArgs e)
@@ -155,6 +123,17 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
             }
 
             guna2Transition1.ShowSync(reportSearchList);
+        }
+
+        private void Go_ShowReportDetail(object sender, DataGridViewCellEventArgs e)
+        {
+            // TODO: Implement this method
+            if (reportGridView.Columns["ThaoTac"].Index != null && e.ColumnIndex == reportGridView.Columns["ThaoTac"].Index)
+            {
+                int reportId = int.Parse(reportGridView.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                this.Controls.Clear();
+                this.Controls.Add(new GiangVienReportDetailControl(reportId));
+            }
         }
     }
 }

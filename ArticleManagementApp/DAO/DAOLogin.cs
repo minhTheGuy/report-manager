@@ -17,12 +17,7 @@ namespace ArticleManagementApp.DAO
 
         private DAOLogin() { }
 
-        public DataRow GetAccountByEmail(string email)
-        {
-            return DAOProvider.Instance.ExecuteQuery("exec sp_GetAccountRoleByEmail @Email", new object[] { email }).Rows[0];
-        }
-
-        public DataRow GetAccountById(int id)
+        public DataRow GetAccountById(string id)
         {
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetAccountById @id", new object[] { id }).Rows[0];
         }

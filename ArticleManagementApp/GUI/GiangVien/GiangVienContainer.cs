@@ -27,19 +27,19 @@ namespace ArticleManagementApp.GUI
                     break;
                 case "submitted":
                     btnSubmittedReport.Checked = true;
-                    giangVienHomeContainter.Controls.Add(new ReportList("submitted"));
+                    giangVienHomeContainter.Controls.Add(new ReportList("submitted", "giangVien"));
                     break;
                 case "pending":
                     btnProcessingReport.Checked = true;
-                    giangVienHomeContainter.Controls.Add(new ReportList("pending"));
+                    giangVienHomeContainter.Controls.Add(new ReportList("pending", "giangVien"));
                     break;
                 case "published":
                     btnProcessedReport.Checked = true;
-                    giangVienHomeContainter.Controls.Add(new ReportList("published"));
+                    giangVienHomeContainter.Controls.Add(new ReportList("published", "giangVien"));
                     break;
                 case "stored":
                     btnStoreReport.Checked = true;
-                    giangVienHomeContainter.Controls.Add(new ReportList("stored"));
+                    giangVienHomeContainter.Controls.Add(new ReportList("stored", "giangVien"));
                     break;
                 case "account":
                     btnInfo.Checked = true;
@@ -65,25 +65,25 @@ namespace ArticleManagementApp.GUI
         private void Go_StoredReport(object sender, EventArgs e)
         {
             giangVienHomeContainter.Controls.Clear();
-            giangVienHomeContainter.Controls.Add(new ReportList("stored"));
+            giangVienHomeContainter.Controls.Add(new ReportList("stored", "giangVien"));
         }
 
         private void Go_SubmittedReport(object sender, EventArgs e)
         {
             giangVienHomeContainter.Controls.Clear();
-            giangVienHomeContainter.Controls.Add(new ReportList("submitted"));
+            giangVienHomeContainter.Controls.Add(new GiangVienReportList("submitted"));
         }
 
         private void Go_PendingReport(object sender, EventArgs e)
         {
             giangVienHomeContainter.Controls.Clear();
-            giangVienHomeContainter.Controls.Add(new ReportList("pending"));
+            giangVienHomeContainter.Controls.Add(new GiangVienReportList("pending"));
         }
 
         private void Go_PublishedReport(object sender, EventArgs e)
         {
             giangVienHomeContainter.Controls.Clear();
-            giangVienHomeContainter.Controls.Add(new ReportList("published"));
+            giangVienHomeContainter.Controls.Add(new GiangVienReportList("published"));
         }
 
         private void Go_AccountInfo(object sender, EventArgs e)
@@ -99,7 +99,11 @@ namespace ArticleManagementApp.GUI
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

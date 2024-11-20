@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ArticleManagementApp.DAO;
+using ArticleManagementApp.DTO;
 using ArticleManagementApp.GUI;
 
 namespace ArticleManagementApp.BUS
@@ -22,8 +23,7 @@ namespace ArticleManagementApp.BUS
         public void SetKiemDuyetSession(string email)
         {
             DataRow dt = DAOKiemDuyet.Instance.GetKiemDuyetInfoByEmail(email);
-            AccountSession.Id = Convert.ToInt32(dt["id"]);
-            AccountSession.Email = dt["email"].ToString();
+            AccountSession.Id = dt["id"].ToString();
             AccountSession.Role = "Kiểm duyệt";
         }
 
@@ -61,5 +61,16 @@ namespace ArticleManagementApp.BUS
             return dataRows;
         }
 
+        public List<Models.BaiBao> GetSubmittedReports()
+        {
+            List<Models.BaiBao> reports = [];
+            DataTable data = DAOKiemDuyet.Instance.GetSubmittedReports();
+            foreach (DataRow item in data.Rows)
+            {
+                Models.BaiBao report = new(item);
+                reports.Add(report);
+            }
+            return reports;
+        }
     }
 }

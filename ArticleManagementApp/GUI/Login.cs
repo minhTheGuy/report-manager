@@ -22,27 +22,27 @@ namespace ArticleManagementApp.GUI
 
         private void Do_Login(object sender, EventArgs e)
         {
-            string email = txtUsername.Text;
+            string maND = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (BUS_Login.Instance.Login(email, password))
+            if (BUS_Login.Instance.Login(maND, password))
             {
                 this.Hide();
-                switch (BUS_Login.Instance.CheckRole(email))
+                switch (BUS_Login.Instance.CheckRole(maND))
                 {
                     case 1:
-                        BUS_GiangVien.Instance.SetGiangVienSession(email);
+                        BUS_GiangVien.Instance.SetGiangVienSession(maND);
                         GiangVienContainer gvHome = new("home");
                         gvHome.ShowDialog();
                         break;
                     case 2:
-                        BUS_KiemDuyet.Instance.SetKiemDuyetSession(email);
+                        BUS_KiemDuyet.Instance.SetKiemDuyetSession(maND);
                         KiemDuyetContainer kdHome = new("home");
                         kdHome.ShowDialog();
                         break;
                     case 3:
                         // TODO: implement this
-                        BUS_GiamSat.Instance.SetGiamSatSession(email);
+                        BUS_GiamSat.Instance.SetGiamSatSession(maND);
                         GiamSatContainer gsHome = new("home");
                         gsHome.ShowDialog();
                         break;

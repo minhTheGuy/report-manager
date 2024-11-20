@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,30 +29,29 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         }
 
 
-        private object[] GetReportInfo(string status)
+        private object[] GetReportInfo()
         {
+            // get byte[] from image
+            byte[] bytes = File.ReadAllBytes(txtFilePath.Text);
             return new object[] {
-                AccountSession.Id, // @giangVienId
-                txtReportName.Text, // @TieuDeTC
-                txtReportName.Text, // @TieuDeBB
-                AccountSession.Faculty, // @MaKhoa
-                txtPublishNumber.Text, // @SoPH
-                txtPublishNumber.Text, // @STBD
-                txtPublishNumber.Text, // @STKT
-                DateTime.Now, // @NamXB
-                DateTime.Now, // @NgayNop
-                DateTime.Now, // @NgayXuLy
+                txtReportName.Text, // @TenBB
+                txtOrigin.Text, // @NoiDangBai
+                txtMainAuthor.Text, // @TacGiaChinh
+                txtAuthors.Text, // @TacGiaHoTro
                 txtLink.Text, // @LinkBB
-                "MH01", // @MaMH
+                txtFacultyCode.Text, // @MaKhoa
+                txtPublishNumber.Text, // @SoPH
+                txtNumPages.Text, // @SoTrang
+                datePickerPublishDate.Value, // @NgayXB
                 txtDOI.Text, // @DOI
-                status, // @TrangThai
-                txtDOI.Text, // @GhiChu
+                txtCourseCode.Text, // @MaMH
+                bytes,
             };
         }
 
         private void Cancel_Report(object sender, EventArgs e)
         {
-            bool result = BUS_GiangVien.Instance.InsertReportByGiangVien(GetReportInfo("store"));
+            bool result = BUS_GiangVien.Instance.InsertReportByGiangVien(GetReportInfo());
 
             if (result)
             {
@@ -67,7 +67,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
 
         private void Do_Submit(object sender, EventArgs e)
         {
-            bool result = BUS_GiangVien.Instance.InsertReportByGiangVien(GetReportInfo("submitted"));
+            bool result = BUS_GiangVien.Instance.InsertReportByGiangVien(GetReportInfo());
 
             if (result)
             {
@@ -84,7 +84,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         private void Do_Search(object sender, EventArgs e)
         {
 
-            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsByEmail(AccountSession.Email);
+            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsById(AccountSession.Id);
             List<Models.BaiBao> filteredBaiBaos = new List<Models.BaiBao>();
 
             foreach (Models.BaiBao baiBao in baiBaos)
@@ -119,10 +119,27 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
                     image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
                 }
 
-                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.NgayNop, baiBao.NgayXuLy, image);
+                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
             }
 
             guna2Transition1.ShowSync(reportSearchList);
+        }
+
+        private void BrowseImage(object sender, EventArgs e)
+        {
+            // open file dialog
+            OpenFileDialog openFileDialog = new();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            openFileDialog.Title = "Chọn minh chứng bài báo";
+            openFileDialog.Multiselect = false;
+            openFileDialog.CheckFileExists = true;
+            openFileDialog.CheckPathExists = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // set image to picture box
+                txtFilePath.Text = openFileDialog.FileName;
+            }
         }
     }
 }

@@ -34,5 +34,10 @@ namespace ArticleManagementApp.GUI.Components
             label3.Text = dataRow["TotalReports"].ToString();
             dateTimePicker.Text = selectedTime.ToString();
         }
+
+        private void dashboardContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

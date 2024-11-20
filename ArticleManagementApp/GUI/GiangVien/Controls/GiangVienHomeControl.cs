@@ -90,33 +90,35 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         {
             guna2Transition1.Hide(reportSearchList);
 
-            List<Models.BaiBao> reports = BUS_GiangVien.Instance.GetReportsByEmail(AccountSession.Email);
+            List<Models.BaiBao> reports = BUS_GiangVien.Instance.GetReportsById(AccountSession.Id);
             foreach (Models.BaiBao report in reports)
             {
                 Image image = null;
                 if (report.TrangThai.Equals("published"))
                 {
-                    image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
+                    image = Properties.Resources.success_status;
                 }
                 else if (report.TrangThai.Equals("need re-check") || report.TrangThai.Equals("pending"))
                 {
-                    image = Image.FromFile(@"C:\Users\Admin\Downloads\warning_status.png");
+                    image = Properties.Resources.warning_status;
                 }
                 else
                 {
-                    image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
+                    image = Properties.Resources.pending_status;
                 }
 
-                reportList.Rows.Add(report.ID, report.TenBaiBao, report.NgayNop, report.NgayXuLy, image);
+                reportGridView.Rows.Add(report.ID, report.TenBaiBao, report.Location, image, report.Note);
             }
+            // hide Location column
+            reportGridView.Columns["Location"].Visible = false;
         }
 
         private void Go_ShowReportDetail(object sender, DataGridViewCellEventArgs e)
         {
             // TODO: Implement this method
-            if (reportList.Columns["ThaoTac"].Index != null && e.ColumnIndex == reportList.Columns["ThaoTac"].Index)
+            if (reportGridView.Columns["ThaoTac"].Index != null && e.ColumnIndex == reportGridView.Columns["ThaoTac"].Index)
             {
-                int reportId = int.Parse(reportList.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                int reportId = int.Parse(reportGridView.Rows[e.RowIndex].Cells["id"].Value.ToString());
                 this.Controls.Clear();
                 this.Controls.Add(new GiangVienReportDetailControl(reportId));
             }
@@ -124,7 +126,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
 
         private void guna2DataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            foreach (DataGridViewRow row in reportList.Rows)
+            foreach (DataGridViewRow row in reportGridView.Rows)
             {
                 if (row.Cells["TrangThai"].Value != null && row.Cells["TrangThai"].Value.ToString().Equals("Đã xuất bản"))
                 {
@@ -140,8 +142,14 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         private void Do_Search(object sender, EventArgs e)
         {
 
-            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsByEmail(AccountSession.Email);
+            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsById(AccountSession.Email);
             List<Models.BaiBao> filteredBaiBaos = new List<Models.BaiBao>();
+
+            if (searchBar.SearchKey.Equals(""))
+            {
+                guna2Transition1.Hide(reportSearchList);
+                return;
+            }
 
             foreach (Models.BaiBao baiBao in baiBaos)
             {
@@ -172,11 +180,13 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
                 }
                 else
                 {
-                    image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
+                    image = Image.FromFile(@"C:\Users\Admin\Downloads\pending.png");
                 }
 
-                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.NgayNop, baiBao.NgayXuLy, image);
+                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
             }
+            // hide Location column
+            reportSearchList.Columns["Location"].Visible = false;
 
             guna2Transition1.ShowSync(reportSearchList);
         }

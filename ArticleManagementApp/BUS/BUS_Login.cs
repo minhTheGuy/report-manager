@@ -35,7 +35,7 @@ namespace ArticleManagementApp.BUS
 
         public int CheckRole(string email)
         {
-            DataRow row = DAOLogin.Instance.GetAccountByEmail(email);
+            DataRow row = DAOLogin.Instance.GetAccountById(email);
             if (row == null)
                 return 0;
             return int.Parse(row["loai"].ToString());

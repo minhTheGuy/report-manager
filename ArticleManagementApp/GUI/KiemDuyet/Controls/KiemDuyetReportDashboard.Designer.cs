@@ -118,6 +118,7 @@
             this.reportList.ThemeStyle.RowsStyle.Height = 30;
             this.reportList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.reportList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.reportList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Show_SubmittedReport);
             // 
             // lblReportListTitle
             // 

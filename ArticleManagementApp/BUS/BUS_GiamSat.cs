@@ -26,8 +26,7 @@ namespace ArticleManagementApp.BUS
         public void SetGiamSatSession(string email)
         {
             DataRow data = BUS_GiamSat.Instance.GetGiamSatInfoByEmail(email);
-            AccountSession.Id = Convert.ToInt32(data["id"]);
-            AccountSession.Email = data["email"].ToString();
+            AccountSession.Id = data["id"].ToString();
             AccountSession.Role = "Giám sát";
         }
 

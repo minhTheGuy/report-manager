@@ -39,9 +39,10 @@
             this.btnSubmit = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtCourseCode = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblCourseCode = new System.Windows.Forms.Label();
             this.datePickerPublishDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtNumPages = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.txtFilePath = new Guna.UI2.WinForms.Guna2TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtDOI = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -50,6 +51,8 @@
             this.txtPublishNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtFacultyCode = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblFacultyCode = new System.Windows.Forms.Label();
             this.txtAuthors = new Guna.UI2.WinForms.Guna2TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -71,6 +74,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnBrowse = new Guna.UI2.WinForms.Guna2Button();
+            this.txtFilePath = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumPages)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -92,7 +97,7 @@
             this.btnSubmit.Image = global::ArticleManagementApp.Properties.Resources.submit_report_icon;
             this.btnSubmit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnSubmit.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnSubmit.Location = new System.Drawing.Point(719, 721);
+            this.btnSubmit.Location = new System.Drawing.Point(719, 735);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(172, 59);
             this.btnSubmit.TabIndex = 22;
@@ -116,7 +121,7 @@
             this.btnCancel.Image = global::ArticleManagementApp.Properties.Resources.cancel_report_icon;
             this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnCancel.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnCancel.Location = new System.Drawing.Point(461, 721);
+            this.btnCancel.Location = new System.Drawing.Point(461, 735);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(172, 59);
             this.btnCancel.TabIndex = 21;
@@ -129,6 +134,9 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
             this.guna2Panel2.BorderRadius = 15;
+            this.guna2Panel2.Controls.Add(this.btnBrowse);
+            this.guna2Panel2.Controls.Add(this.txtCourseCode);
+            this.guna2Panel2.Controls.Add(this.lblCourseCode);
             this.guna2Panel2.Controls.Add(this.datePickerPublishDate);
             this.guna2Panel2.Controls.Add(this.txtNumPages);
             this.guna2Panel2.Controls.Add(this.txtFilePath);
@@ -140,10 +148,44 @@
             this.guna2Panel2.Controls.Add(this.txtPublishNumber);
             this.guna2Panel2.Controls.Add(this.label10);
             this.guna2Transition1.SetDecoration(this.guna2Panel2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Panel2.Location = new System.Drawing.Point(719, 119);
+            this.guna2Panel2.Location = new System.Drawing.Point(719, 107);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(600, 530);
+            this.guna2Panel2.Size = new System.Drawing.Size(600, 622);
             this.guna2Panel2.TabIndex = 20;
+            // 
+            // txtCourseCode
+            // 
+            this.txtCourseCode.BorderRadius = 10;
+            this.txtCourseCode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtCourseCode, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtCourseCode.DefaultText = "";
+            this.txtCourseCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCourseCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCourseCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCourseCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCourseCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCourseCode.Font = new System.Drawing.Font("Inter", 11F);
+            this.txtCourseCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
+            this.txtCourseCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCourseCode.Location = new System.Drawing.Point(15, 549);
+            this.txtCourseCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCourseCode.Name = "txtCourseCode";
+            this.txtCourseCode.PasswordChar = '\0';
+            this.txtCourseCode.PlaceholderText = "Nhập mã môn học";
+            this.txtCourseCode.SelectedText = "";
+            this.txtCourseCode.Size = new System.Drawing.Size(555, 54);
+            this.txtCourseCode.TabIndex = 15;
+            // 
+            // lblCourseCode
+            // 
+            this.lblCourseCode.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblCourseCode, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblCourseCode.Font = new System.Drawing.Font("Inter", 11.25F);
+            this.lblCourseCode.Location = new System.Drawing.Point(13, 524);
+            this.lblCourseCode.Name = "lblCourseCode";
+            this.lblCourseCode.Size = new System.Drawing.Size(98, 22);
+            this.lblCourseCode.TabIndex = 14;
+            this.lblCourseCode.Text = "Mã môn học";
             // 
             // datePickerPublishDate
             // 
@@ -178,35 +220,12 @@
             this.txtNumPages.TabIndex = 12;
             this.txtNumPages.UpDownButtonFillColor = System.Drawing.Color.Silver;
             // 
-            // txtFilePath
-            // 
-            this.txtFilePath.BorderRadius = 10;
-            this.txtFilePath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2Transition1.SetDecoration(this.txtFilePath, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.txtFilePath.DefaultText = "";
-            this.txtFilePath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFilePath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFilePath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFilePath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFilePath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilePath.Font = new System.Drawing.Font("Inter", 11F);
-            this.txtFilePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
-            this.txtFilePath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilePath.Location = new System.Drawing.Point(15, 459);
-            this.txtFilePath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.PasswordChar = '\0';
-            this.txtFilePath.PlaceholderText = "Nhập số phát hành";
-            this.txtFilePath.SelectedText = "";
-            this.txtFilePath.Size = new System.Drawing.Size(555, 51);
-            this.txtFilePath.TabIndex = 11;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.label15, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label15.Font = new System.Drawing.Font("Inter", 11.25F);
-            this.label15.Location = new System.Drawing.Point(11, 430);
+            this.label15.Location = new System.Drawing.Point(13, 424);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(97, 22);
             this.label15.TabIndex = 10;
@@ -306,6 +325,8 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderRadius = 15;
+            this.guna2Panel1.Controls.Add(this.txtFacultyCode);
+            this.guna2Panel1.Controls.Add(this.lblFacultyCode);
             this.guna2Panel1.Controls.Add(this.txtAuthors);
             this.guna2Panel1.Controls.Add(this.label14);
             this.guna2Panel1.Controls.Add(this.guna2TextBox1);
@@ -318,10 +339,44 @@
             this.guna2Panel1.Controls.Add(this.txtReportName);
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Transition1.SetDecoration(this.guna2Panel1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Panel1.Location = new System.Drawing.Point(33, 119);
+            this.guna2Panel1.Location = new System.Drawing.Point(33, 107);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(600, 530);
+            this.guna2Panel1.Size = new System.Drawing.Size(600, 622);
             this.guna2Panel1.TabIndex = 19;
+            // 
+            // txtFacultyCode
+            // 
+            this.txtFacultyCode.BorderRadius = 10;
+            this.txtFacultyCode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtFacultyCode, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtFacultyCode.DefaultText = "";
+            this.txtFacultyCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFacultyCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFacultyCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFacultyCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFacultyCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFacultyCode.Font = new System.Drawing.Font("Inter", 11F);
+            this.txtFacultyCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
+            this.txtFacultyCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFacultyCode.Location = new System.Drawing.Point(20, 549);
+            this.txtFacultyCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFacultyCode.Name = "txtFacultyCode";
+            this.txtFacultyCode.PasswordChar = '\0';
+            this.txtFacultyCode.PlaceholderText = "Nhập khoa";
+            this.txtFacultyCode.SelectedText = "";
+            this.txtFacultyCode.Size = new System.Drawing.Size(555, 54);
+            this.txtFacultyCode.TabIndex = 13;
+            // 
+            // lblFacultyCode
+            // 
+            this.lblFacultyCode.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblFacultyCode, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblFacultyCode.Font = new System.Drawing.Font("Inter", 11.25F);
+            this.lblFacultyCode.Location = new System.Drawing.Point(16, 524);
+            this.lblFacultyCode.Name = "lblFacultyCode";
+            this.lblFacultyCode.Size = new System.Drawing.Size(70, 22);
+            this.lblFacultyCode.TabIndex = 12;
+            this.lblFacultyCode.Text = "Mã khoa";
             // 
             // txtAuthors
             // 
@@ -341,7 +396,7 @@
             this.txtAuthors.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAuthors.Name = "txtAuthors";
             this.txtAuthors.PasswordChar = '\0';
-            this.txtAuthors.PlaceholderText = "Ví dụ: Nguyễn Văn A, Trần Văn B, ...";
+            this.txtAuthors.PlaceholderText = "1 GV: GV01, nếu có nhiều hơn 1 TG:  GV02,GV03";
             this.txtAuthors.SelectedText = "";
             this.txtAuthors.Size = new System.Drawing.Size(555, 54);
             this.txtAuthors.TabIndex = 11;
@@ -395,11 +450,11 @@
             this.txtLink.Font = new System.Drawing.Font("Inter", 11F);
             this.txtLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
             this.txtLink.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLink.Location = new System.Drawing.Point(20, 456);
+            this.txtLink.Location = new System.Drawing.Point(20, 450);
             this.txtLink.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLink.Name = "txtLink";
             this.txtLink.PasswordChar = '\0';
-            this.txtLink.PlaceholderText = "Nhập link bài báo";
+            this.txtLink.PlaceholderText = "Nhập đường dẫn đến bài báo";
             this.txtLink.SelectedText = "";
             this.txtLink.Size = new System.Drawing.Size(555, 54);
             this.txtLink.TabIndex = 7;
@@ -409,7 +464,7 @@
             this.label9.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.label9, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label9.Font = new System.Drawing.Font("Inter", 11.25F);
-            this.label9.Location = new System.Drawing.Point(16, 430);
+            this.label9.Location = new System.Drawing.Point(16, 424);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(172, 22);
             this.label9.TabIndex = 6;
@@ -433,7 +488,7 @@
             this.txtMainAuthor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMainAuthor.Name = "txtMainAuthor";
             this.txtMainAuthor.PasswordChar = '\0';
-            this.txtMainAuthor.PlaceholderText = "Ví dụ: Nguyễn Văn A";
+            this.txtMainAuthor.PlaceholderText = "Nhập tác giả chính (Ví dụ: GV01)";
             this.txtMainAuthor.SelectedText = "";
             this.txtMainAuthor.Size = new System.Drawing.Size(555, 54);
             this.txtMainAuthor.TabIndex = 5;
@@ -522,7 +577,7 @@
             this.label5.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.label5, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label5.Font = new System.Drawing.Font("Inter Medium", 25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(521, 71);
+            this.label5.Location = new System.Drawing.Point(523, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(310, 49);
             this.label5.TabIndex = 18;
@@ -598,7 +653,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.reportSearchList.DefaultCellStyle = dataGridViewCellStyle4;
             this.reportSearchList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.reportSearchList.Location = new System.Drawing.Point(33, 66);
+            this.reportSearchList.Location = new System.Drawing.Point(1099, 765);
             this.reportSearchList.Name = "reportSearchList";
             this.reportSearchList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -689,6 +744,51 @@
             this.dataGridViewImageColumn3.Image = global::ArticleManagementApp.Properties.Resources.search_btn;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Animated = true;
+            this.btnBrowse.BackColor = System.Drawing.Color.Transparent;
+            this.btnBrowse.BorderRadius = 5;
+            this.guna2Transition1.SetDecoration(this.btnBrowse, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnBrowse.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBrowse.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBrowse.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBrowse.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBrowse.FillColor = System.Drawing.Color.Silver;
+            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBrowse.ForeColor = System.Drawing.Color.Gray;
+            this.btnBrowse.IndicateFocus = true;
+            this.btnBrowse.Location = new System.Drawing.Point(499, 450);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(71, 51);
+            this.btnBrowse.TabIndex = 16;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseTransparentBackground = true;
+            this.btnBrowse.Click += new System.EventHandler(this.BrowseImage);
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.BorderRadius = 10;
+            this.txtFilePath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtFilePath, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtFilePath.DefaultText = "";
+            this.txtFilePath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilePath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilePath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilePath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilePath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilePath.Font = new System.Drawing.Font("Inter", 11F);
+            this.txtFilePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(188)))), ((int)(((byte)(202)))));
+            this.txtFilePath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilePath.Location = new System.Drawing.Point(15, 450);
+            this.txtFilePath.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.PasswordChar = '\0';
+            this.txtFilePath.PlaceholderText = "Nhập số phát hành";
+            this.txtFilePath.SelectedText = "";
+            this.txtFilePath.Size = new System.Drawing.Size(519, 51);
+            this.txtFilePath.TabIndex = 11;
+            // 
             // GiangVienAddReportControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -720,7 +820,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2DateTimePicker datePickerPublishDate;
         private Guna.UI2.WinForms.Guna2NumericUpDown txtNumPages;
-        private Guna.UI2.WinForms.Guna2TextBox txtFilePath;
         private System.Windows.Forms.Label label15;
         private Guna.UI2.WinForms.Guna2TextBox txtDOI;
         private System.Windows.Forms.Label label13;
@@ -750,5 +849,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private Guna.UI2.WinForms.Guna2TextBox txtFacultyCode;
+        private System.Windows.Forms.Label lblFacultyCode;
+        private Guna.UI2.WinForms.Guna2TextBox txtCourseCode;
+        private System.Windows.Forms.Label lblCourseCode;
+        private Guna.UI2.WinForms.Guna2Button btnBrowse;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilePath;
     }
 }

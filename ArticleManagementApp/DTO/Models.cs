@@ -13,17 +13,17 @@ namespace ArticleManagementApp.DTO
         {
             public string ID { get; set; }
             public string TenBaiBao { get; set; }
-            public DateTime NgayNop { get; set; }
-            public DateTime NgayXuLy { get; set; }
+            public string Location { get; set; }
             public string TrangThai { get; set; }
+            public string Note { get; set; }
             public BaiBao() { }
             public BaiBao(DataRow dataRow)
             {
                 this.ID = dataRow["ReportID"].ToString();
-                this.TenBaiBao = dataRow["ReportTitle"].ToString();
-                this.NgayNop = Convert.ToDateTime(dataRow["PublicationYear"]);
-                this.NgayXuLy = Convert.ToDateTime(dataRow["PublicationYear"]);
+                this.TenBaiBao = dataRow["JournalTitle"].ToString();
+                this.Location = dataRow["ReportTitle"].ToString();
                 this.TrangThai = dataRow["Status"].ToString();
+                this.Note = dataRow["Notes"].ToString();
             }
         }
 

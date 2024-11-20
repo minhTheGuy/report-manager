@@ -152,6 +152,12 @@
     <Compile Include="GUI\Components\SearchBar.Designer.cs">
       <DependentUpon>SearchBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GiangVien\Controls\GiangVienReportList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GiangVien\Controls\GiangVienReportList.Designer.cs">
+      <DependentUpon>GiangVienReportList.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GiangVien\Controls\StoredReportControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     <EmbeddedResource Include="GUI\Components\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiangVien\Controls\GiangVienReportList.resx">
+      <DependentUpon>GiangVienReportList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GiangVien\Controls\StoredReportControl.resx">
       <DependentUpon>StoredReportControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,10 +310,12 @@
     <Content Include="Resources\Bell.png" />
     <Content Include="Resources\bell_icon.png" />
     <Content Include="Resources\bot_icon.png" />
+    <None Include="Resources\warning_status.png" />
     <None Include="Resources\Vector1.png" />
     <None Include="Resources\cancel_report_icon.png" />
     <None Include="Resources\curve_rectangle.png" />
     <None Include="Resources\clock.png" />
+    <None Include="Resources\danger_status.png" />
     <Content Include="Resources\door_in_icon.png" />
     <None Include="Resources\email_icon.png" />
     <Content Include="Resources\example_avatar.png" />
@@ -332,6 +343,7 @@
     <Content Include="Resources\pattern-c.png" />
     <None Include="Resources\phone_icon.png" />
     <None Include="Resources\printer_icon.png" />
+    <None Include="Resources\pending_status.png" />
     <Content Include="Resources\report_icon.png" />
     <Content Include="Resources\report_processed_icon.png" />
     <Content Include="Resources\report_processing_icon.png" />
@@ -340,6 +352,7 @@
     <None Include="Resources\submit_report_icon.png" />
     <None Include="Resources\submitted_report_icon.png" />
     <None Include="Resources\search_btn.png" />
+    <None Include="Resources\success_status.png" />
     <Content Include="Resources\thembaibao_icon.png" />
     <None Include="Resources\Transactions.png" />
     <None Include="Resources\union-1.png" />

@@ -18,8 +18,8 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
     public partial class AccountInfo : UserControl
     {
         private SearchBar searchBar;
-        private int id;
-        public AccountInfo(string type, int id = 0)
+        private string id;
+        public AccountInfo(string type, string id = "")
         {
             InitializeComponent();
 
@@ -45,30 +45,24 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         private void LoadAccountInfo()
         {
             DataRow dt;
-            if (id == 0)
-            {
-                dt = BUS_GiangVien.Instance.GetGiangVienInfoByEmail(AccountSession.Email);
-                txtName.Text = dt["name"].ToString();
-                txtEmail.Text = dt["email"].ToString();
-                txtDegree.Text = dt["hocvi"].ToString();
-                txtFaculty.Text = dt["khoa"].ToString();
-                txtPhoneNumber.Text = dt["PhoneNumber"].ToString();
-                return;
-            }
-            dt = BUS_GiangVien.Instance.GetGiangVienInfoById(id);
-            lblName.Text = dt["name"].ToString();
-            lblTitle.Text = dt["hocvi"].ToString();
-            txtName.Text = dt["name"].ToString();
-            txtEmail.Text = dt["email"].ToString();
-            txtDegree.Text = dt["hocvi"].ToString();
-            txtFaculty.Text = dt["khoa"].ToString();
-            txtPhoneNumber.Text = dt["PhoneNumber"].ToString();
+            dt = BUS_GiangVien.Instance.GetGiangVienInfoById(AccountSession.Id);
+            txtMaGV.Text = dt["MaGV"].ToString();
+            txtMaGV.Enabled = false;
+            txtName.Text = dt["HoTenGV"].ToString();
+            txtHocVi.Text = dt["HocVi"].ToString();
+            txtHocHam.Text = dt["HocHam"].ToString();
+            txtTotalReports.Text = dt["SLBB"].ToString();
+            txtTotalTime.Text = dt["SoGio"].ToString();
+            guna2CirclePictureBox1.Image = Image.FromStream(new System.IO.MemoryStream((byte[])dt["ADD"]));
+            guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            return;
+
         }
 
         private void Do_Search(object sender, EventArgs e)
         {
 
-            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsByEmail(AccountSession.Email);
+            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsById(AccountSession.Id);
             List<Models.BaiBao> filteredBaiBaos = new List<Models.BaiBao>();
 
             foreach (Models.BaiBao baiBao in baiBaos)
@@ -103,10 +97,31 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
                     image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
                 }
 
-                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.NgayNop, baiBao.NgayXuLy, image);
+                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
             }
 
             guna2Transition1.ShowSync(reportSearchList);
+        }
+
+        private void ChangeAvatar(object sender, EventArgs e)
+        {
+            // open file dialog to choose image
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // get image path
+                string imagePath = openFileDialog.FileName;
+                byte[] bytes = System.IO.File.ReadAllBytes(imagePath);
+                BUS_GiangVien.Instance.ChangeAvatarGV(AccountSession.Id, bytes);
+                MessageBox.Show("Đổi avatar thành công!");
+            }
+        }
+
+        private void Update_Info(object sender, EventArgs e)
+        {
+            BUS_GiangVien.Instance.UpdateInforGV(new object[] { AccountSession.Id, txtName.Text, txtHocHam.Text, txtHocVi.Text });
+            MessageBox.Show("Cập nhật thông tin thành công!");
         }
     }
 }

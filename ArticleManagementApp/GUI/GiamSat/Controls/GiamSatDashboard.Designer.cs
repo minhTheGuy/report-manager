@@ -69,6 +69,7 @@
             this.dashboardContainer.Name = "dashboardContainer";
             this.dashboardContainer.Size = new System.Drawing.Size(1228, 151);
             this.dashboardContainer.TabIndex = 3;
+            this.dashboardContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.dashboardContainer_Paint);
             // 
             // dateTimePicker
             // 
@@ -116,17 +117,17 @@
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(756, 10);
+            this.label5.Location = new System.Drawing.Point(762, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(10, 131);
+            this.label5.Size = new System.Drawing.Size(2, 131);
             this.label5.TabIndex = 44;
             // 
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Location = new System.Drawing.Point(339, 10);
+            this.label9.Location = new System.Drawing.Point(355, 10);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(10, 131);
+            this.label9.Size = new System.Drawing.Size(2, 131);
             this.label9.TabIndex = 42;
             // 
             // label3

@@ -38,8 +38,6 @@
             this.dashboardContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.listGiangVien = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slbb = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +46,8 @@
             this.joinDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThaoTac = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listGiangVien)).BeginInit();
             this.SuspendLayout();
@@ -170,23 +170,6 @@
             this.listGiangVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.listGiangVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Show_Info);
             // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Inter Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(25, 24);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 41);
-            this.lblMessage.TabIndex = 7;
-            this.lblMessage.Visible = false;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Thao Tác";
-            this.dataGridViewImageColumn1.Image = global::ArticleManagementApp.Properties.Resources.giam_sat_avatar1;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 147;
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
@@ -255,6 +238,23 @@
             this.ThaoTac.Image = global::ArticleManagementApp.Properties.Resources.giam_sat_avatar1;
             this.ThaoTac.Name = "ThaoTac";
             this.ThaoTac.ToolTipText = "thao tác";
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Inter Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.Location = new System.Drawing.Point(25, 24);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 41);
+            this.lblMessage.TabIndex = 7;
+            this.lblMessage.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Thao Tác";
+            this.dataGridViewImageColumn1.Image = global::ArticleManagementApp.Properties.Resources.giam_sat_avatar1;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 147;
             // 
             // TimeDashboard
             // 

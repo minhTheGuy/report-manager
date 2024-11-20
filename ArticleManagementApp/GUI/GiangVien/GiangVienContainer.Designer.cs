@@ -76,7 +76,7 @@ namespace ArticleManagementApp.GUI
             // 
             this.guna2PictureBox2.Image = global::ArticleManagementApp.Properties.Resources.bot_icon;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(1319, 797);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(1299, 797);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(53, 61);
             this.guna2PictureBox2.TabIndex = 36;
@@ -154,7 +154,6 @@ namespace ArticleManagementApp.GUI
             // 
             // panel1
             // 
-            this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label1);
@@ -163,7 +162,7 @@ namespace ArticleManagementApp.GUI
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 67);
+            this.panel1.Size = new System.Drawing.Size(229, 67);
             this.panel1.TabIndex = 40;
             // 
             // label1
@@ -420,7 +419,6 @@ namespace ArticleManagementApp.GUI
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

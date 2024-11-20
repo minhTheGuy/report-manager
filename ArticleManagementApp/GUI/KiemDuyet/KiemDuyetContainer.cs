@@ -95,7 +95,7 @@ namespace ArticleManagementApp.GUI
         private void Go_PublishedReport(object sender, EventArgs e)
         {
             controlContainer.Controls.Clear();
-            ReportList reportList = new ReportList("published");
+            ReportList reportList = new ReportList("published", "kiemDuyet");
             reportList.Dock = DockStyle.Fill;
             controlContainer.Controls.Add(reportList);
         }
@@ -103,7 +103,7 @@ namespace ArticleManagementApp.GUI
         private void Go_SubmittedReport(object sender, EventArgs e)
         {
             controlContainer.Controls.Clear();
-            ReportList reportList = new ReportList("submitted");
+            ReportList reportList = new ReportList("submitted", "kiemDuyet");
             reportList.Dock = DockStyle.Fill;
             controlContainer.Controls.Add(reportList);
         }
@@ -111,7 +111,7 @@ namespace ArticleManagementApp.GUI
         private void Go_PendingReport(object sender, EventArgs e)
         {
             controlContainer.Controls.Clear();
-            ReportList reportList = new ReportList("pending");
+            ReportList reportList = new ReportList("pending", "kiemDuyet");
             reportList.Dock = DockStyle.Fill;
             controlContainer.Controls.Add(reportList);
         }

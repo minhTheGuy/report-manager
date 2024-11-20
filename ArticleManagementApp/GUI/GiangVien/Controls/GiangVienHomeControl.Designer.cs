@@ -62,8 +62,8 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -79,12 +79,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblTotalReports = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.reportList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.reportGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenBaiBao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayXuLy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewImageColumn();
+            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThaoTac = new System.Windows.Forms.DataGridViewImageColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -103,7 +103,7 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reportList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportGridView)).BeginInit();
             this.guna2Panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,9 +130,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.reportSearchList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.reportSearchList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportSearchList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -147,8 +144,8 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
             this.dataGridViewImageColumn2,
+            this.dataGridViewTextBoxColumn4,
             this.dataGridViewImageColumn3});
             this.guna2Transition1.SetDecoration(this.reportSearchList, Guna.UI2.AnimatorNS.DecorationType.None);
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -181,7 +178,7 @@
             this.reportSearchList.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.reportSearchList.RowTemplate.Height = 100;
             this.reportSearchList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.reportSearchList.Size = new System.Drawing.Size(1104, 206);
+            this.reportSearchList.Size = new System.Drawing.Size(1314, 227);
             this.reportSearchList.TabIndex = 22;
             this.reportSearchList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.reportSearchList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -204,7 +201,6 @@
             this.reportSearchList.ThemeStyle.RowsStyle.Height = 100;
             this.reportSearchList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.reportSearchList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.reportSearchList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Go_ShowReportDetail);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -226,24 +222,23 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NgayNop";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Ngày nộp";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "location";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nơi Đăng Bài";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NgayXuLy";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Ngày xử lý";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewImageColumn2
             // 
+            this.dataGridViewImageColumn2.DataPropertyName = "Status";
             this.dataGridViewImageColumn2.HeaderText = "Trạng thái";
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Note";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Ghi Chú";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewImageColumn3
             // 
@@ -413,7 +408,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.reportList);
+            this.panel4.Controls.Add(this.reportGridView);
             this.panel4.Controls.Add(this.label16);
             this.guna2Transition1.SetDecoration(this.panel4, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel4.Location = new System.Drawing.Point(31, 524);
@@ -421,36 +416,33 @@
             this.panel4.Size = new System.Drawing.Size(1314, 269);
             this.panel4.TabIndex = 20;
             // 
-            // reportList
+            // reportGridView
             // 
-            this.reportList.AllowUserToResizeRows = false;
+            this.reportGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.reportList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.reportList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.reportGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.reportGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(169)))), ((int)(((byte)(170)))));
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reportList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.reportList.ColumnHeadersHeight = 30;
-            this.reportList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.reportList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.reportGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.reportGridView.ColumnHeadersHeight = 30;
+            this.reportGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.reportGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.TenBaiBao,
-            this.NgayNop,
-            this.NgayXuLy,
-            this.TrangThai,
+            this.location,
+            this.Status,
+            this.Note,
             this.ThaoTac});
-            this.guna2Transition1.SetDecoration(this.reportList, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Transition1.SetDecoration(this.reportGridView, Guna.UI2.AnimatorNS.DecorationType.None);
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -458,11 +450,12 @@
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reportList.DefaultCellStyle = dataGridViewCellStyle10;
-            this.reportList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.reportList.Location = new System.Drawing.Point(0, 42);
-            this.reportList.Name = "reportList";
-            this.reportList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.reportGridView.DefaultCellStyle = dataGridViewCellStyle10;
+            this.reportGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.reportGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.reportGridView.Location = new System.Drawing.Point(0, 42);
+            this.reportGridView.Name = "reportGridView";
+            this.reportGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -470,41 +463,41 @@
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reportList.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.reportList.RowHeadersVisible = false;
-            this.reportList.RowHeadersWidth = 51;
+            this.reportGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.reportGridView.RowHeadersVisible = false;
+            this.reportGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.DimGray;
-            this.reportList.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.reportList.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reportList.RowTemplate.Height = 100;
-            this.reportList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.reportList.Size = new System.Drawing.Size(1314, 215);
-            this.reportList.TabIndex = 18;
-            this.reportList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.reportList.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.reportList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.reportList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.reportList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.reportList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.reportList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.reportList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.reportList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.reportList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.reportList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.reportList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.reportList.ThemeStyle.HeaderStyle.Height = 30;
-            this.reportList.ThemeStyle.ReadOnly = false;
-            this.reportList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.reportList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.reportList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.reportList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.reportList.ThemeStyle.RowsStyle.Height = 100;
-            this.reportList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.reportList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.reportList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Go_ShowReportDetail);
+            this.reportGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.reportGridView.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reportGridView.RowTemplate.Height = 100;
+            this.reportGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.reportGridView.Size = new System.Drawing.Size(1314, 227);
+            this.reportGridView.TabIndex = 20;
+            this.reportGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.reportGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.reportGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.reportGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.reportGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.reportGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.reportGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.reportGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.reportGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.reportGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.reportGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.reportGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.reportGridView.ThemeStyle.HeaderStyle.Height = 30;
+            this.reportGridView.ThemeStyle.ReadOnly = false;
+            this.reportGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.reportGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.reportGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.reportGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.reportGridView.ThemeStyle.RowsStyle.Height = 100;
+            this.reportGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.reportGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.reportGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Go_ShowReportDetail);
             // 
             // ID
             // 
@@ -524,26 +517,25 @@
             this.TenBaiBao.Name = "TenBaiBao";
             this.TenBaiBao.ReadOnly = true;
             // 
-            // NgayNop
+            // location
             // 
-            this.NgayNop.DataPropertyName = "NgayNop";
-            this.NgayNop.HeaderText = "Ngày nộp";
-            this.NgayNop.Name = "NgayNop";
-            this.NgayNop.ReadOnly = true;
+            this.location.DataPropertyName = "location";
+            this.location.HeaderText = "Nơi Đăng Bài";
+            this.location.Name = "location";
             // 
-            // NgayXuLy
+            // Status
             // 
-            this.NgayXuLy.DataPropertyName = "NgayXuLy";
-            this.NgayXuLy.HeaderText = "Ngày xử lý";
-            this.NgayXuLy.Name = "NgayXuLy";
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Trạng thái";
+            this.Status.Name = "Status";
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // TrangThai
+            // Note
             // 
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Note.DataPropertyName = "Note";
+            this.Note.HeaderText = "Ghi Chú";
+            this.Note.Name = "Note";
             // 
             // ThaoTac
             // 
@@ -713,7 +705,7 @@
             this.guna2Panel7.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reportList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportGridView)).EndInit();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             this.ResumeLayout(false);
@@ -737,7 +729,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblTotalReports;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2DataGridView reportList;
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label lblYearlyReport;
@@ -745,20 +736,21 @@
         private System.Windows.Forms.Label lblDashboard;
         private Guna.Charts.WinForms.GunaChart numOfReportChart;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenBaiBao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayXuLy;
-        private System.Windows.Forms.DataGridViewImageColumn TrangThai;
-        private System.Windows.Forms.DataGridViewImageColumn ThaoTac;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private System.Windows.Forms.Panel searchBarContainer;
+        private Guna.UI2.WinForms.Guna2DataGridView reportGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBaiBao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn location;
+        private System.Windows.Forms.DataGridViewImageColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+        private System.Windows.Forms.DataGridViewImageColumn ThaoTac;
         private Guna.UI2.WinForms.Guna2DataGridView reportSearchList;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
     }
 }

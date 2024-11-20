@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,15 +32,28 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         private void LoadReportInfo(int id)
         {
             DataRow reportInfo = BUS_GiangVien.Instance.GetReportById(id);
-            txtReportName.Text = reportInfo["TieuDeBB"].ToString();
+            DataTable authors = BUS_GiangVien.Instance.GetGiangVienByReportId(id);
+            txtReportName.Text = reportInfo["TenBB"].ToString();
             txtOrigin.Text = reportInfo["STBD"].ToString();
-            txtMainAuthor.Text = reportInfo["STKT"].ToString();
-            txtAuthors.Text = reportInfo["SoPH"].ToString();
+            foreach (DataRow author in authors.Rows)
+            {
+                if (author["VaiTro"].ToString().Equals("Chính"))
+                {
+                    txtMainAuthor.Text = author["HoTenGV"].ToString();
+                    continue;
+                }
+                txtAuthors.Text += author["HoTenGV"].ToString() + ", ";
+            }
             txtLink.Text = reportInfo["LinkBB"].ToString();
             txtPublishNumber.Text = reportInfo["SoPH"].ToString();
             txtNumPages.Text = reportInfo["STKT"].ToString();
-            datePickerPublishDate.Text = reportInfo["NamXB"].ToString();
+            datePickerPublishDate.Text = reportInfo["NgayXB"].ToString();
             txtDOI.Text = reportInfo["DOI"].ToString();
+            byte[] bytes = (byte[])reportInfo["MinhChung"];
+            MemoryStream ms = new MemoryStream(bytes);
+            minhChungFile.Image = Image.FromStream(ms);
+            txtFacultyCode.Text = reportInfo["MaKhoa"].ToString();
+            txtCourseCode.Text = reportInfo["MaMH"].ToString();
 
             txtReportName.Enabled = false;
             txtOrigin.Enabled = false;
@@ -61,7 +75,7 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
         private void Do_Search(object sender, EventArgs e)
         {
 
-            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsByEmail(AccountSession.Email);
+            List<Models.BaiBao> baiBaos = BUS_GiangVien.Instance.GetReportsById(AccountSession.Id);
             List<Models.BaiBao> filteredBaiBaos = new List<Models.BaiBao>();
 
             foreach (Models.BaiBao baiBao in baiBaos)
@@ -96,10 +110,34 @@ namespace ArticleManagementApp.GUI.GiangVien.Controls
                     image = Image.FromFile(@"C:\Users\Admin\Downloads\success_status.png");
                 }
 
-                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.NgayNop, baiBao.NgayXuLy, image);
+                reportSearchList.Rows.Add(baiBao.ID, baiBao.TenBaiBao, baiBao.Location, image, baiBao.Note);
             }
 
             guna2Transition1.ShowSync(reportSearchList);
+        }
+
+        private void lblFacultyCode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFacultyCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Show_Image(object sender, EventArgs e)
+        {
+            // show image in new form
+            Form form = new Form();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Size = new Size(minhChungFile.Image.Size.Height, minhChungFile.Image.Size.Width);
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Dock = DockStyle.Fill;
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.Image = minhChungFile.Image;
+            form.Controls.Add(pictureBox);
+            form.ShowDialog();
         }
     }
 }

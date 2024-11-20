@@ -133,6 +133,16 @@ namespace ArticleManagementApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap danger_status {
+            get {
+                object obj = ResourceManager.GetObject("danger_status", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap door_in_icon {
             get {
                 object obj = ResourceManager.GetObject("door_in_icon", resourceCulture);
@@ -383,6 +393,16 @@ namespace ArticleManagementApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pending_status {
+            get {
+                object obj = ResourceManager.GetObject("pending_status", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap phone_icon {
             get {
                 object obj = ResourceManager.GetObject("phone_icon", resourceCulture);
@@ -483,6 +503,16 @@ namespace ArticleManagementApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap success_status {
+            get {
+                object obj = ResourceManager.GetObject("success_status", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap thembaibao_icon {
             get {
                 object obj = ResourceManager.GetObject("thembaibao_icon", resourceCulture);
@@ -536,6 +566,16 @@ namespace ArticleManagementApp.Properties {
         internal static System.Drawing.Bitmap Vector1 {
             get {
                 object obj = ResourceManager.GetObject("Vector1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warning_status {
+            get {
+                object obj = ResourceManager.GetObject("warning_status", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

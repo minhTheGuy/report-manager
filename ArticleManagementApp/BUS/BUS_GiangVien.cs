@@ -22,20 +22,19 @@ namespace ArticleManagementApp.BUS
 
         public void SetGiangVienSession(string email)
         {
-            DataRow data = BUS_GiangVien.Instance.GetGiangVienInfoByEmail(email);
-            AccountSession.Id = Convert.ToInt32(data["id"]);
-            AccountSession.Role = data["hocvi"].ToString();
-            AccountSession.Email = email;
+            DataRow data = BUS_GiangVien.Instance.GetGiangVienInfoById(email);
+            AccountSession.Id = data["MaGV"].ToString();
+            AccountSession.Role = data["HocVi"].ToString();
         }
 
-        public DataRow GetGiangVienInfoById(int id)
+        public DataRow GetGiangVienInfoById(string id)
         {
             return DAOGiangVien.Instance.GetGiangVienInfoById(id);
         }
 
-        public DataRow GetGiangVienInfoByEmail(string email)
+        public bool UpdateInforGV(object[] parameters)
         {
-            return DAOGiangVien.Instance.GetGiangVienInfoByEmail(email);
+            return DAOGiangVien.Instance.UpdateInforGV(parameters);
         }
 
         public List<string> GetGiangVienDashboardData()
@@ -55,10 +54,10 @@ namespace ArticleManagementApp.BUS
             return DAOReport.Instance.GetReportById(id);
         }
 
-        public List<Models.BaiBao> GetReportsByEmail(string email)
+        public List<Models.BaiBao> GetReportsById(string id)
         {
             List<Models.BaiBao> reports = [];
-            DataTable data = DAO.DAOReport.Instance.GetReportsByEmail(email);
+            DataTable data = DAO.DAOReport.Instance.GetReportsById(id);
             foreach (DataRow item in data.Rows)
             {
                 Models.BaiBao report = new(item);
@@ -67,10 +66,20 @@ namespace ArticleManagementApp.BUS
             return reports;
         }
 
-        public List<Models.BaiBao> GetReportsByStatus(string email, string status)
+        public DataTable GetGiangVienByReportId(int id)
         {
-            List<Models.BaiBao> reports = GetReportsByEmail(email);
+            return DAOReport.Instance.GetGiangVienByReportId(id);
+        }
+
+        public List<Models.BaiBao> GetReportsByStatus(string id, string status)
+        {
+            List<Models.BaiBao> reports = GetReportsById(id);
             return reports.Where(report => report.TrangThai == status).ToList();
+        }
+        
+        public bool ChangeAvatarGV(string id, byte[] avatar)
+        {
+            return DAOGiangVien.Instance.ChangeAvatar(id, avatar);
         }
 
         public bool InsertReportByGiangVien(object[] parameters)

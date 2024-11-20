@@ -20,7 +20,7 @@ namespace ArticleManagementApp.DAO
 
         private DAOGiangVien() { }
 
-        public DataRow GetGiangVienInfoById(int id)
+        public DataRow GetGiangVienInfoById(string id)
         {
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetGiangVienInfoById @id", new object[] { id }).Rows[0];
 
@@ -29,14 +29,24 @@ namespace ArticleManagementApp.DAO
         {
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetGiangVienInfoByEmail @email", new object[] { email }).Rows[0];
         }
-        public DataRow GetGiangVienDashboardStatistic(int gv_id)
+        public DataRow GetGiangVienDashboardStatistic(string gv_id)
         {
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetDashboardStatisticsForGiangVien @GV_ID", new object[] { gv_id }).Rows[0];
         }
 
-        public DataTable GetReportStatisticByYear(int year, int gv_id)
+        public DataTable GetReportStatisticByYear(int year, string gv_id)
         {
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetReportStatisticByYear @year , @GV_ID", new object[] { year, gv_id });
+        }
+
+        public bool ChangeAvatar(string id, byte[] avatar)
+        {
+            return DAOProvider.Instance.ExecuteNonQuery("exec sp_ChangeAvatarGV @id , @path", new object[] { id, avatar }) > 0;
+        }
+
+        public bool UpdateInforGV(object[] parameters)
+        {
+            return DAOProvider.Instance.ExecuteNonQuery("exec sp_UpdateInforGV @MaGV , @HoTen , @HocHam , @HocVi", parameters) > 0;
         }
     }
 }

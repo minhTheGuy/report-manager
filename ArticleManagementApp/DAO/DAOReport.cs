@@ -25,15 +25,20 @@ namespace ArticleManagementApp.DAO
             return DAOProvider.Instance.ExecuteQuery("exec sp_GetReports");
         }
 
-        public DataTable GetReportsByEmail(string email)
+        public DataTable GetReportsById(string id)
         {
-            return DAOProvider.Instance.ExecuteQuery("exec sp_GetGiangVienReportsByEmail @email", new object[] { email });
+            return DAOProvider.Instance.ExecuteQuery("exec sp_GetGiangVienReportsById @Id", new object[] { id });
         }
 
         public bool InsertReportByGiangVien(object[] parameters)
         {
-            string query = "exec sp_SubmitReportByGiangVien @giangVienId , @TieuDeTC , @TieuDeBB , @MaKhoa , @SoPH , @STBD , @STKT , @NamXB , @NgayNop , @NgayXuLy , @LinkBB , @MaMH , @DOI , @TrangThai , @GhiChu";
+            string query = "exec sp_SubmitReportByGiangVien @TenBaiBao , @NoiDangBai , @TacGiaChinh , @TacGiaHoTro , @LinkBB , @MaKhoa , @SoPH , @SoTrang , @NgayXB , @DOI , @MaMH , @MinhChung";
             return DAOProvider.Instance.ExecuteNonQuery(query, parameters) > 0;
+        }
+
+        public DataTable GetGiangVienByReportId(int id)
+        {
+            return DAOProvider.Instance.ExecuteQuery("exec sp_GetGiangVienByReportId @id", new object[] { id });
         }
 
         public DataTable SearchGiangVienReports(string keyword, int gv_id)
